@@ -1,0 +1,7 @@
+- hosts: server1
+  become: yes
+  user: root
+  roles:
+    - mariadb
+    - nginx
+    - phpv7

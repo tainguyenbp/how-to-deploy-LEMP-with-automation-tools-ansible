@@ -1,0 +1,3 @@
+- set_fact: role_name=nginx
+- include: install.yml
+- include: configure.yml

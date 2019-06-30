@@ -1,0 +1,26 @@
+- name: Install EPEL repository
+  yum:
+    pkg: '{{ item }}'
+    state: installed
+  with_items:
+   - epel-release
+
+
+- name: Install nginx packages
+  yum:
+    pkg: '{{ item }}'
+    state: installed
+  with_items:
+   - nginx
+
+- name: Enable service nginx
+  systemd:
+    name: nginx
+    enabled: yes
+    masked: no
+
+- name: Restart the service nginx
+  systemd:
+    state: started
+    name: nginx
+    enabled: true

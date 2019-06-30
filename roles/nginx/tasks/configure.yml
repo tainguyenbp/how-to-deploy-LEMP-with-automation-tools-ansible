@@ -1,0 +1,10 @@
+
+- name: Copy new config file default
+  template:
+    src: default.conf
+    dest: /etc/nginx/conf.d/default.conf
+
+- name: Restart service nginx
+  systemd:
+    name: nginx
+    state: restarted
