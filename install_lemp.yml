@@ -1,4 +1,4 @@
-- hosts: server1
+- hosts: server-lemp
   become: yes
   user: root
   roles:
